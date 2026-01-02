@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-  "start": "npx json-server --watch $DB_FILE --port $PORT"
+  "start": "npx json-server --watch $DB_FILE --port $PORT",
   "build": "npm install"
 },
   "keywords": [],
