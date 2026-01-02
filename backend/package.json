@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "npx json-server --watch db.json --port 5000",
+    "start": "json-server db.json --port $PORT",
     "build": "echo 'No build step needed'"
   },
   "keywords": [],
