@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "npx json-server --watch db.json --port 5000",
     "build": "tsc",
     "start": "node dist/server.js"
   },
