@@ -19,3 +19,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+serviceAccountKey.json
+serviceAccountKey.json.json
+.env
+.env.*
+.env.local
