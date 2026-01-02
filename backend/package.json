@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "start": "json-server db.json --port $PORT",
-    "build": "echo 'No build step needed'"
-  },
+  "start": "./node_modules/.bin/json-server db.json --port $PORT",
+  "build": "npm install"
+}
   "keywords": [],
   "author": "",
   "license": "ISC",
