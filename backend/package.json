@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-  "start": "node ./node_modules/json-server/bin.js db.json --port $PORT",
+  "start": "node index.js",
   "build": "npm install"
 },
   "keywords": [],
