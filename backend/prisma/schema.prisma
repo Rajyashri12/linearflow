@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  admin
+  hod
+  teacher
+  student
+  committee_head
+  principal
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  uid   String @unique
+  email String @unique
+  role  Role
+}
+
+model EventPermission {
+  id        Int      @id @default(autoincrement())
+  title     String
+  eventDate String?
+  venue     String?
+  status    String
+  principalStatus String
+  hodApprovalType String
+  collisionReason String?
+  rescheduleSuggestions String[]
+  volunteers String[]
+}
+
+model Attendance {
+  id             Int    @id @default(autoincrement())
+  studentUid     String
+  studentName    String
+  eventId        Int
+  status         String
+  approvalStatus String
+  adminRemark    String?
+}
+
+model Notification {
+  id      String  @id @default(uuid())
+  toRole  String
+  message String
+  read    Boolean @default(false)
+}

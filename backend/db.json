@@ -1,0 +1,1141 @@
+{
+  "users": [
+    {
+      "id": "5d6b",
+      "uid": "Bb3HRR0SCnVy75zZITrQh5NVPke2",
+      "email": "niteshh@gmail.com",
+      "role": "admin",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:00:09.545Z"
+    },
+    {
+      "id": "52c3",
+      "uid": "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+      "email": "hod1@gmail.com",
+      "role": "hod",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:00:18.780Z"
+    },
+    {
+      "id": "2cb5",
+      "uid": "8zNNjeXzs5NdP1p4JjHAFk1P5P83",
+      "email": "teacher1@gmail.com",
+      "role": "teacher",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:00:30.435Z"
+    },
+    {
+      "id": "f02f",
+      "uid": "xMbV4TBLgkaPwVLqhuxkPSNkZDw1",
+      "email": "nit@gmail.com",
+      "role": "student",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:00:39.891Z"
+    },
+    {
+      "id": "9bb4",
+      "uid": "RbEx34VaNihlJCLmFZCCjxwkJ0h2",
+      "email": "admin@gmail.com",
+      "role": "admin",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:01:36.144Z"
+    },
+    {
+      "id": "bf1e",
+      "uid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "email": "committe@gmail.com",
+      "role": "committee_head",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:01:42.706Z"
+    },
+    {
+      "id": "919a",
+      "uid": "hwbjspOucBOLASkBnDm9jqQCouU2",
+      "email": "principal@gmail.com",
+      "role": "principal",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:01:48.155Z"
+    },
+    {
+      "id": "ccec",
+      "uid": "meb0W1gWXQWUU4K28HDYmlDEWL73",
+      "email": "committe1@gmail.com",
+      "role": "committee_head",
+      "status": "APPROVED",
+      "approvedAt": "2026-01-02T05:01:29.136Z"
+    },
+    {
+      "id": "d5fe",
+      "uid": "TjOnMMR81beJWBZx2vBoWJDhVJt2",
+      "email": "student@gmail.com",
+      "role": "student",
+      "status": "PENDING",
+      "createdAt": "2026-01-02T06:59:16.290Z"
+    },
+    {
+      "id": "33e9",
+      "uid": "Q1vSnOYfdxYQe7Nr8022kBe3tXz1",
+      "email": "student1@gmail.com",
+      "role": "student",
+      "status": "PENDING",
+      "createdAt": "2026-01-02T07:00:51.113Z"
+    },
+    {
+      "id": "4ebe",
+      "uid": "PUk81JE8KCavL45h9nA6S6nKODk2",
+      "email": "student2@gmail.com",
+      "role": "student",
+      "status": "PENDING",
+      "createdAt": "2026-01-02T07:04:32.812Z"
+    }
+  ],
+  "attendance": [
+    {
+      "id": "df86",
+      "studentUid": "MoXUgmHaC6awwkEbI6LMHXyP7ey2",
+      "studentName": "niteshya@gmail.com",
+      "date": "2025-12-30",
+      "status": "Present",
+      "approvalStatus": "FORWARDED_TO_TEACHER",
+      "adminRemark": "Verified by Admin"
+    },
+    {
+      "id": "f04c",
+      "studentUid": "xMbV4TBLgkaPwVLqhuxkPSNkZDw1",
+      "studentName": "nit@gmail.com",
+      "date": "2025-12-30",
+      "status": "Absent",
+      "approvalStatus": "REJECTED_BY_ADMIN",
+      "adminRemark": "Rejected by Admin"
+    },
+    {
+      "id": "dc00",
+      "studentUid": "xMbV4TBLgkaPwVLqhuxkPSNkZDw1",
+      "studentName": "nit@gmail.com",
+      "date": "2025-12-30",
+      "status": "Present",
+      "approvalStatus": "FORWARDED_TO_TEACHER",
+      "adminRemark": "Approved"
+    },
+    {
+      "id": "c5f1",
+      "studentUid": "Cp7dwR3xaiWjfF7LsBSzWb2GTe92",
+      "studentName": "niteshyadav@gmail.com",
+      "eventId": "746e",
+      "eventTitle": "Tech",
+      "date": "2025-12-31",
+      "status": "Present",
+      "approvalStatus": "APPROVED_BY_ADMIN",
+      "adminRemark": "Approved by Admin"
+    },
+    {
+      "id": "1563",
+      "studentUid": "xMbV4TBLgkaPwVLqhuxkPSNkZDw1",
+      "studentName": "nit@gmail.com",
+      "eventId": "412c",
+      "eventTitle": "GDG",
+      "date": "2025-12-31",
+      "status": "Present",
+      "approvalStatus": "APPROVED_BY_ADMIN",
+      "adminRemark": "Approved by Admin"
+    },
+    {
+      "id": "5f9f",
+      "studentUid": "xMbV4TBLgkaPwVLqhuxkPSNkZDw1",
+      "studentName": "nit@gmail.com",
+      "eventId": "fb31",
+      "eventTitle": "Sports",
+      "date": "2026-01-02",
+      "status": "Present",
+      "approvalStatus": "APPROVED_BY_ADMIN",
+      "adminRemark": "Approved by Admin"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "d790",
+      "toRole": "hod",
+      "message": "Attendance approved by Admin",
+      "read": true
+    },
+    {
+      "id": "5763",
+      "toRole": "teacher",
+      "message": "Attendance forwarded by HOD",
+      "read": true
+    },
+    {
+      "id": "3035",
+      "toRole": "teacher",
+      "message": "Attendance forwarded by HOD",
+      "read": true
+    },
+    {
+      "id": "1422",
+      "toRole": "teacher",
+      "message": "Attendance forwarded by HOD",
+      "read": true
+    },
+    {
+      "id": "5cdd",
+      "toRole": "teacher",
+      "message": "Attendance forwarded by HOD",
+      "read": true
+    },
+    {
+      "id": "239f",
+      "toRole": "teacher",
+      "message": "Attendance forwarded by HOD",
+      "read": true
+    },
+    {
+      "id": "18e8",
+      "toRole": "student",
+      "message": "Attendance rejected by Admin",
+      "read": false
+    },
+    {
+      "id": "42b7",
+      "toRole": "hod",
+      "message": "Attendance approved by Admin",
+      "read": true
+    },
+    {
+      "id": "a92d",
+      "toRole": "teacher",
+      "message": "Attendance forwarded by HOD",
+      "read": true
+    },
+    {
+      "id": "11a9",
+      "toRole": "hod",
+      "message": "New event permission request: nss",
+      "read": true
+    },
+    {
+      "id": "ae7e",
+      "toRole": "principal",
+      "message": "Event \"nss\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "abb0",
+      "toRole": "hod",
+      "message": "New event permission request: Zephayer",
+      "read": true
+    },
+    {
+      "id": "73f3",
+      "toRole": "committee_head",
+      "message": "Event \"Zephayer\" rejected by HOD",
+      "read": true
+    },
+    {
+      "id": "bfbb",
+      "toRole": "hod",
+      "message": "Re-applied event: CESA",
+      "read": true
+    },
+    {
+      "id": "f5bb",
+      "toRole": "principal",
+      "message": "Event \"Yuti\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "f3ee",
+      "toRole": "hod",
+      "message": "New event permission request: Women's Day",
+      "read": true
+    },
+    {
+      "id": "ff9d",
+      "toRole": "principal",
+      "message": "Event \"CSI\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "381a",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "cafe",
+      "toRole": "committee_head",
+      "message": "Event \"Women's Day\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "d82e",
+      "toRole": "committee_head",
+      "message": "Event \"CSI\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "94a3",
+      "toRole": "committee_head",
+      "message": "Event \"Yuti\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "ba50",
+      "toRole": "principal",
+      "message": "Event \"Tech\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "838f",
+      "toRole": "principal",
+      "message": "Event \"Tech\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "e15b",
+      "toRole": "principal",
+      "message": "Event \"Tech\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "f2a8",
+      "toRole": "principal",
+      "message": "Event \"Tech\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "fdfd",
+      "toRole": "committee_head",
+      "message": "Event \"Tech\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "53d3",
+      "toRole": "principal",
+      "message": "Event \"GDG\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "97db",
+      "toRole": "principal",
+      "message": "Event \"GDG\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "56c0",
+      "toRole": "principal",
+      "message": "Event \"GDG\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "f593",
+      "toRole": "committee_head",
+      "message": "Event \"GDG\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "a593",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "395b",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "491f",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "0204",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "edd0",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "ab0b",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "2866",
+      "toRole": "committee_head",
+      "message": "Event \"Cesa\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "2402",
+      "toRole": "principal",
+      "message": "Event \"Teachers day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "548a",
+      "toRole": "committee_head",
+      "message": "Event \"Teachers day\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "6b0d",
+      "toRole": "student",
+      "message": "Event \"nss\" has been cancelled",
+      "read": false
+    },
+    {
+      "id": "1e28",
+      "toRole": "teacher",
+      "message": "Event \"nss\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "e79b",
+      "toRole": "hod",
+      "message": "Event \"nss\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "7705",
+      "toRole": "principal",
+      "message": "Event \"nss\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "4297",
+      "toRole": "student",
+      "message": "Event \"CSI\" has been cancelled",
+      "read": false
+    },
+    {
+      "id": "0c2b",
+      "toRole": "teacher",
+      "message": "Event \"CSI\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "6ad4",
+      "toRole": "hod",
+      "message": "Event \"CSI\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "bb23",
+      "toRole": "principal",
+      "message": "Event \"CSI\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "e662",
+      "toRole": "student",
+      "message": "Event \"Yuti\" has been cancelled",
+      "read": false
+    },
+    {
+      "id": "274a",
+      "toRole": "teacher",
+      "message": "Event \"Yuti\" has been cancelled",
+      "read": false
+    },
+    {
+      "id": "e4db",
+      "toRole": "hod",
+      "message": "Event \"Yuti\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "e640",
+      "toRole": "principal",
+      "message": "Event \"Yuti\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "048e",
+      "toRole": "principal",
+      "message": "Event \"open day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "aae5",
+      "toRole": "committee_head",
+      "message": "Event \"open day\" cancelled due to collision with \"Teachers day\"",
+      "read": true
+    },
+    {
+      "id": "b5b0",
+      "toRole": "student",
+      "message": "Event \"Cesa\" has been cancelled",
+      "read": false
+    },
+    {
+      "id": "de86",
+      "toRole": "teacher",
+      "message": "Event \"Cesa\" has been cancelled",
+      "read": false
+    },
+    {
+      "id": "b4cb",
+      "toRole": "hod",
+      "message": "Event \"Cesa\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "fe23",
+      "toRole": "principal",
+      "message": "Event \"Cesa\" has been cancelled",
+      "read": true
+    },
+    {
+      "id": "ed0d",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "5c1b",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "f51a",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "28c8",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "692a",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "ac01",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "fa1d",
+      "toRole": "principal",
+      "message": "Event \"Women's Day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "edbc",
+      "toRole": "committee_head",
+      "message": "Event \"Women's Day\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "d802",
+      "toRole": "principal",
+      "message": "Event \"open day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "2ea0",
+      "toRole": "principal",
+      "message": "Event \"open day\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "e9ec",
+      "toRole": "committee_head",
+      "message": "Event \"open day\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "f1d8",
+      "toRole": "principal",
+      "message": "Event \"Sports\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "53c2",
+      "toRole": "principal",
+      "message": "Event \"Sports (Cricket)\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "3170",
+      "toRole": "principal",
+      "message": "Event \"Sports (Cricket)\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "9cf1",
+      "toRole": "principal",
+      "message": "Event \"Sports(kho-kho)\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "925b",
+      "toRole": "principal",
+      "message": "Event \"Sports(kho-kho)\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "9ee2",
+      "toRole": "principal",
+      "message": "Event \"Sports(kho-kho)\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "edb1",
+      "toRole": "committee_head",
+      "message": "Event \"Sports\" approved by Principal",
+      "read": true
+    },
+    {
+      "id": "446d",
+      "toRole": "committee_head",
+      "message": "Event \"Sports (Cricket)\" cancelled due to collision with \"Sports\"",
+      "read": true
+    },
+    {
+      "id": "7d95",
+      "toRole": "committee_head",
+      "message": "Event \"Sports(kho-kho)\" cancelled due to collision with \"Sports\"",
+      "read": true
+    },
+    {
+      "id": "47b2",
+      "toRole": "principal",
+      "message": "Event \"PTA\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "b20b",
+      "toRole": "committee_head",
+      "message": "Event \"PTA\" cancelled due to collision with \"Sports\"",
+      "read": true
+    },
+    {
+      "id": "7c1f",
+      "toRole": "HOD",
+      "message": "Event Rescheduled: \"Sports(kho-kho)\" has been moved to 2026-01-07 at Ground.",
+      "read": false,
+      "createdAt": "2026-01-01T05:02:31.891Z"
+    },
+    {
+      "id": "977b",
+      "toRole": "principal",
+      "message": "Event \"Sports(kho-kho)\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "3242",
+      "toRole": "principal",
+      "message": "Event \"PTA\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "e034",
+      "toRole": "principal",
+      "message": "Event \"PTA\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "63cd",
+      "toRole": "principal",
+      "message": "Event \"PTA\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "9eec",
+      "toRole": "principal",
+      "message": "Event \"PTA\" forwarded for approval",
+      "read": true
+    },
+    {
+      "id": "78de",
+      "toRole": "PRINCIPAL",
+      "message": "New Approval Required: \"NSS\" has been forwarded by HOD.",
+      "read": false,
+      "createdAt": "2026-01-01T05:15:07.442Z"
+    },
+    {
+      "id": "c1a9",
+      "toRole": "COMMITTEE_HEAD",
+      "message": "Progress: Your event \"NSS\" was approved by HOD and is now PENDING PRINCIPAL.",
+      "read": false,
+      "createdAt": "2026-01-01T05:15:08.205Z"
+    },
+    {
+      "id": "c8b0",
+      "toRole": "COMMITTEE_HEAD",
+      "message": "Progress: Your event \"NSS\" was approved by HOD and is now PENDING PRINCIPAL.",
+      "read": false,
+      "createdAt": "2026-01-01T05:15:08.582Z"
+    },
+    {
+      "id": "0f67",
+      "toRole": "HOD",
+      "message": "Event Rescheduled: \"Sports (Cricket)\" has been moved to 2026-01-02 at C-510.",
+      "read": false,
+      "createdAt": "2026-01-02T03:50:18.814Z"
+    },
+    {
+      "id": "527a",
+      "toRole": "PRINCIPAL",
+      "message": "New Approval Required: \"Sports (Cricket)\" has been forwarded by HOD.",
+      "read": false,
+      "createdAt": "2026-01-02T03:51:06.302Z"
+    },
+    {
+      "id": "8323",
+      "toRole": "COMMITTEE_HEAD",
+      "message": "Progress: Your event \"Sports (Cricket)\" was approved by HOD and is now PENDING PRINCIPAL.",
+      "read": false,
+      "createdAt": "2026-01-02T03:51:07.183Z"
+    },
+    {
+      "id": "ef9d",
+      "toRole": "PRINCIPAL",
+      "message": "New Approval Required: \"CSMA\" has been forwarded by HOD.",
+      "read": false,
+      "createdAt": "2026-01-02T03:51:11.524Z"
+    },
+    {
+      "id": "a5dd",
+      "toRole": "COMMITTEE_HEAD",
+      "message": "Progress: Your event \"CSMA\" was approved by HOD and is now PENDING PRINCIPAL.",
+      "read": false,
+      "createdAt": "2026-01-02T03:51:12.965Z"
+    },
+    {
+      "id": "42ae",
+      "toRole": "PRINCIPAL",
+      "message": "New Approval Required: \"CSMA\" has been forwarded by HOD.",
+      "read": false,
+      "createdAt": "2026-01-02T03:51:13.401Z"
+    },
+    {
+      "id": "294b",
+      "toRole": "COMMITTEE_HEAD",
+      "message": "Progress: Your event \"CSMA\" was approved by HOD and is now PENDING PRINCIPAL.",
+      "read": false,
+      "createdAt": "2026-01-02T03:51:14.349Z"
+    },
+    {
+      "id": "7c59",
+      "toRole": "committee_head",
+      "message": "Event \"Sports (Cricket)\" cancelled due to collision with \"open day\"",
+      "read": false
+    },
+    {
+      "id": "c5d1",
+      "toRole": "HOD",
+      "message": "Event Cancelled: \"Sports (Cricket)\" was cancelled by the Committee Head.",
+      "read": false,
+      "createdAt": "2026-01-02T03:53:23.929Z"
+    },
+    {
+      "id": "862f",
+      "toRole": "hod",
+      "message": "Attendance approved for nit@gmail.com",
+      "read": false
+    },
+    {
+      "id": "6484",
+      "toRole": "hod",
+      "message": "Attendance approved for nit@gmail.com",
+      "read": false
+    },
+    {
+      "id": "3b79",
+      "toRole": "hod",
+      "message": "Attendance approved for nit@gmail.com",
+      "read": false
+    }
+  ],
+  "eventPermissions": [
+    {
+      "id": "6156",
+      "title": "Zephayer",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "hodApprovalType": "ALL",
+      "department": "",
+      "status": "CANCELLED",
+      "hodApprovals": [],
+      "principalStatus": "TERMINATED",
+      "hodRemark": "Rejected by HOD",
+      "cancellationReason": "it is rejected",
+      "collisionReason": null
+    },
+    {
+      "id": "ba75",
+      "title": "CESA",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "hodApprovalType": "DEPARTMENT",
+      "department": "AIML",
+      "status": "CANCELLED",
+      "hodApprovals": [],
+      "principalStatus": "TERMINATED",
+      "hodRemark": "Rejected by HOD",
+      "collisionReason": null
+    },
+    {
+      "id": "58c6",
+      "title": "CSI",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "hodApprovalType": "DEPARTMENT",
+      "department": "Computer",
+      "status": "CANCELLED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "principalStatus": "TERMINATED"
+    },
+    {
+      "id": "2b39",
+      "title": "Yuti",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "hodApprovalType": "ALL",
+      "department": "",
+      "status": "CANCELLED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "principalStatus": "TERMINATED"
+    },
+    {
+      "id": "7a0d",
+      "title": "Women's Day",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "hodApprovalType": "DEPARTMENT",
+      "department": "computer",
+      "eventDate": "2026-01-03",
+      "venue": "College Ground",
+      "status": "APPROVED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "principalStatus": "APPROVED",
+      "cancellationReason": null,
+      "collisionReason": null,
+      "organisedBy": "Committee Head",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "746e",
+      "title": "Tech",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2025-12-31",
+      "venue": "5th floor C wing",
+      "volunteers": [
+        "nit@gmail.com",
+        "Rajyashri"
+      ],
+      "status": "APPROVED",
+      "principalStatus": "APPROVED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ]
+    },
+    {
+      "id": "412c",
+      "title": "GDG",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2025-12-31",
+      "venue": "C-510",
+      "volunteers": [
+        "nitesh"
+      ],
+      "status": "APPROVED",
+      "principalStatus": "APPROVED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ]
+    },
+    {
+      "id": "039d",
+      "title": "Cesa",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2026-01-02",
+      "venue": "C-510",
+      "volunteers": [
+        "Rajyashri"
+      ],
+      "status": "CANCELLED",
+      "principalStatus": "TERMINATED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ]
+    },
+    {
+      "id": "ace2",
+      "title": "Teachers day",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2026-01-01",
+      "venue": "C-510",
+      "volunteers": [
+        "Rajyashri"
+      ],
+      "status": "APPROVED",
+      "principalStatus": "APPROVED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ]
+    },
+    {
+      "id": "7104",
+      "title": "open day",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2026-01-02",
+      "venue": "C-510",
+      "volunteers": [
+        "abhishek",
+        "aakash"
+      ],
+      "status": "APPROVED",
+      "principalStatus": "APPROVED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "collisionWith": "Teachers day",
+      "collisionReason": null,
+      "cancellationReason": null,
+      "organisedBy": "Committee Head",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "fb31",
+      "title": "Sports",
+      "eventDate": "2026-01-02",
+      "venue": "Ground",
+      "status": "APPROVED",
+      "principalStatus": "APPROVED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "rescheduleSuggestions": [],
+      "collisionReason": null,
+      "cancellationReason": null,
+      "organisedBy": "Committee Head",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "c0f3",
+      "title": "Sports (Cricket)",
+      "eventDate": "2026-01-02",
+      "venue": "C-510",
+      "department": "EXTC",
+      "hodApprovalType": "DEPARTMENT",
+      "status": "CANCELLED",
+      "principalStatus": "TERMINATED",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "rescheduleSuggestions": [],
+      "collisionReason": null,
+      "cancellationReason": "let you know soon!!!!",
+      "collisionWith": "open day",
+      "hodRemark": "Approved by HOD"
+    },
+    {
+      "id": "df8b",
+      "title": "Sports(kho-kho)",
+      "committeeHeadUid": "meb0W1gWXQWUU4K28HDYmlDEWL73",
+      "eventDate": "2026-01-07",
+      "venue": "Ground",
+      "department": "AIML",
+      "hodApprovalType": "DEPARTMENT",
+      "volunteers": [
+        "nit@gmail.com",
+        "Rajyashri",
+        "Nitesh"
+      ],
+      "status": "PENDING_PRINCIPAL",
+      "principalStatus": "PENDING",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "collisionReason": null,
+      "cancellationReason": null,
+      "collisionWith": "Sports",
+      "rescheduleSuggestions": []
+    },
+    {
+      "id": "84b1",
+      "title": "PTA",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2026-01-05",
+      "venue": "Ground",
+      "department": "CS",
+      "hodApprovalType": "DEPARTMENT",
+      "volunteers": [
+        "nit@gmail.com",
+        "Rajyashri",
+        "Nitesh",
+        "Bhagyashri"
+      ],
+      "status": "PENDING_PRINCIPAL",
+      "principalStatus": "PENDING",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1",
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "collisionReason": null,
+      "cancellationReason": null,
+      "collisionWith": "Sports"
+    },
+    {
+      "id": "f0d9",
+      "title": "PTA",
+      "committeeHeadUid": "meb0W1gWXQWUU4K28HDYmlDEWL73",
+      "eventDate": "2025-12-02",
+      "venue": "C-510",
+      "department": "DS",
+      "hodApprovalType": "DEPARTMENT",
+      "volunteers": [
+        "Rajyashri",
+        "MIra",
+        "Nitesh",
+        "Bhagyashree"
+      ],
+      "status": "PENDING_PRINCIPAL",
+      "principalStatus": "PENDING",
+      "collisionReason": null,
+      "cancellationReason": null,
+      "rescheduleSuggestions": [],
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ]
+    },
+    {
+      "id": "f9cb",
+      "title": "NSS",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2026-01-01",
+      "venue": "C-510",
+      "department": "All Departments",
+      "hodApprovalType": "ALL",
+      "volunteers": [
+        "nit@gmail.com",
+        "rajyashri",
+        "BHagyasgri"
+      ],
+      "status": "PENDING_PRINCIPAL",
+      "principalStatus": "PENDING",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "hodRemark": "Approved by HOD",
+      "collisionReason": null,
+      "rescheduleSuggestions": [],
+      "cancellationReason": null
+    },
+    {
+      "id": "385b",
+      "title": "CSMA",
+      "committeeHeadUid": "XCCgelFIFgVE3EwDGUWdGuwQHTn2",
+      "eventDate": "2026-01-01",
+      "venue": "C-510",
+      "department": "CS",
+      "hodApprovalType": "DEPARTMENT",
+      "volunteers": [
+        "nit@gmail.com",
+        "Rajyashri",
+        "Mira"
+      ],
+      "status": "PENDING_PRINCIPAL",
+      "principalStatus": "PENDING",
+      "hodApprovals": [
+        "l33laYnFVqTAkg5TeCCFh9XWdBk1"
+      ],
+      "hodRemark": "Approved by HOD",
+      "collisionReason": null,
+      "rescheduleSuggestions": [],
+      "cancellationReason": null
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "name": "Zephayer",
+      "organisedBy": "CSI Committee",
+      "date": "2025-12-26",
+      "venue": "Main Auditorium",
+      "description": "Annual technical fest"
+    },
+    {
+      "id": "2",
+      "name": "HackSprint",
+      "organisedBy": "IT Department",
+      "date": "2025-12-28",
+      "venue": "Seminar Hall",
+      "description": "24-hour hackathon"
+    },
+    {
+      "id": "f0ed",
+      "name": "Women's Day",
+      "organisedBy": "Committee Head",
+      "date": "2025-12-27",
+      "venue": "College Ground",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "1e59",
+      "name": "CSI",
+      "organisedBy": "Committee Head",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "43da",
+      "name": "Yuti",
+      "organisedBy": "Committee Head",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "e5b5",
+      "name": "Tech",
+      "organisedBy": "Committee Head",
+      "date": "2025-12-31",
+      "venue": "5th floor C wing",
+      "description": "Approved by Principal"
+    },
+    {
+      "id": "2543",
+      "name": "Teachers day",
+      "organisedBy": "Committee Head",
+      "date": "2026-01-01",
+      "venue": "C-510",
+      "description": "Approved by Principal"
+    }
+  ]
+}
