@@ -4,7 +4,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "npx json-server --watch db.json --port 5000",
-    "build": "npm install"
+    "build": "echo 'No build step needed'"
   },
   "keywords": [],
   "author": "",
