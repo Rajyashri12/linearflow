@@ -4,7 +4,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "npx json-server --watch db.json --port 5000",
-    "build": "tsc",
+    "build": "echo 'No build step required for JSON server'",
     "start": "node dist/server.js"
   },
   "keywords": [],
