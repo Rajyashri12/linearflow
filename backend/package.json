@@ -1,15 +1,11 @@
 {
-  "name": "json-server-backend",
-  "version": "1.0.0",
+  "name": "mock-backend",
   "private": true,
-  "engines": {
-    "node": "18.x"
-  },
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "json-server": "0.17.3"
     "express": "^4.19.2"
   }
 }
