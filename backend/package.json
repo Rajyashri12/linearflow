@@ -2,7 +2,7 @@
   "name": "json-server-backend",
   "version": "1.0.0",
   "scripts": {
-  "start": "json-server --watch db.json --port 10000"
+  "start": "node node_modules/json-server/lib/bin.js --watch db.json --port 10000"
 },
   "keywords": [],
   "author": "",
