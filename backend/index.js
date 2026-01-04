@@ -1,12 +1,18 @@
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 5000;
+import express from "express";
+import fs from "fs";
 
-server.use(middlewares);
-server.use(router);
+const app = express();
+app.use(express.json());
 
-server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
+const db = JSON.parse(fs.readFileSync("db.json", "utf-8"));
+
+Object.keys(db).forEach((key) => {
+  app.get(`/${key}`, (req, res) => {
+    res.json(db[key]);
+  });
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Mock API running on port", PORT);
 });
