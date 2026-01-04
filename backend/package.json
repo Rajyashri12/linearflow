@@ -1,10 +1,8 @@
 {
-  "name": "linearflow-backend",
+  "name": "json-server-backend",
   "version": "1.0.0",
-  "main": "dist/server.js",
   "scripts": {
-  "start": "node ./node_modules/json-server/lib/bin.js --watch $DB_FILE --port $PORT",
-  "build": "npm install"
+  "start": "json-server --watch db.json --port 5000"
 },
   "keywords": [],
   "author": "",
