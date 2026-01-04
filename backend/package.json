@@ -1,6 +1,10 @@
 {
   "name": "json-server-backend",
   "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
   "start": "node node_modules/json-server/lib/bin.js --watch db.json --port 10000"
 },
