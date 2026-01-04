@@ -6,7 +6,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node node_modules/json-server/lib/bin.js --watch db.json --port 10000"
+    "start": "node node_modules/json-server/bin/index.js --watch db.json --port $PORT"
   },
   "dependencies": {
     "json-server": "0.17.3"
