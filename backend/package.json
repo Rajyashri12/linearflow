@@ -6,7 +6,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "npx json-server --watch db.json --port $PORT"
+    "start": "node index.js"
   },
   "dependencies": {
     "json-server": "0.17.3"
