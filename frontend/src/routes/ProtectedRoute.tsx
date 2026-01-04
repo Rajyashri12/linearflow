@@ -1,28 +1,32 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const ProtectedRoute = () => {
   const { user, loading } = useAuth();
+  const location = useLocation();
 
-  // Prevent redirecting while Firebase is still checking the session
   if (loading) {
     return (
-      <div style={{ 
-        display: "flex", 
-        justifyContent: "center", 
-        alignItems: "center", 
-        height: "100vh",
-        fontFamily: "sans-serif",
-        color: "#64748b"
-      }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          fontFamily: "sans-serif",
+          color: "#64748b",
+        }}
+      >
         Verifying Session...
       </div>
     );
   }
 
-  // If user is authenticated, render the child routes via <Outlet />
-  // Otherwise, redirect to the login page
-  return user ? <Outlet /> : <Navigate to="/login" replace />;
+  return user ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" replace state={{ from: location }} />
+  );
 };
 
 export default ProtectedRoute;
