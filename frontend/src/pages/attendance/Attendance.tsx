@@ -40,7 +40,6 @@ const Attendance = () => {
 
     setSubmitting(true);
     try {
-      // LOGIC KEPT EXACTLY AS PER YOUR FIRST SNIPPET
       await api.post("/attendance", {
         userId: user.uid,              
         studentName: user.email,
@@ -56,12 +55,12 @@ const Attendance = () => {
       setStatus("Present");
 
     } catch (error: any) {
-      // LOGIC KEPT EXACTLY AS PER YOUR FIRST SNIPPET
-      if (error?.response?.status === 409) {
-        alert("⚠️ Attendance already marked for this event");
+      // UPDATED LOGIC: Handle "Already Marked" specifically
+      if (error?.response?.status === 409 || error?.response?.data?.message?.includes("already marked")) {
+        alert("⚠️ You have already marked attendance for this event.");
       } else {
         console.error("Failed to submit attendance:", error);
-        alert("Failed to submit attendance");
+        alert("Failed to submit attendance. Please try again.");
       }
     } finally {
       setSubmitting(false);
@@ -182,7 +181,6 @@ const Attendance = () => {
                     2. Event Details & Status
                   </h2>
                   
-                  {/* Event Details Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 bg-blue-50/30 p-5 rounded-2xl border border-blue-50">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-white rounded-lg shadow-sm"><MapPin className="w-4 h-4 text-blue-500" /></div>
@@ -200,7 +198,6 @@ const Attendance = () => {
                     </div>
                   </div>
 
-                  {/* Status Selection */}
                   <div className="mb-8">
                     <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-tight">Mark your status</label>
                     <div className="grid grid-cols-2 gap-4">
@@ -229,7 +226,6 @@ const Attendance = () => {
                     </div>
                   </div>
 
-                  {/* Action Button */}
                   <button
                     onClick={submitAttendance}
                     disabled={submitting}
