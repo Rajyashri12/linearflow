@@ -2,16 +2,9 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { api } from "../../services/api";
 import DashboardLayout from "../../components/layout/DashboardLayout";
-import {
-  Calendar,
-  MapPin,
-  CheckCircle,
-  XCircle,
-  Clock,
-  Loader2,
-  Send,
-  User,
-  AlertCircle,
+import { 
+  Calendar, MapPin, CheckCircle, XCircle, Clock, 
+  Loader2, Send, User, AlertCircle 
 } from "lucide-react";
 
 const Attendance = () => {
@@ -39,7 +32,6 @@ const Attendance = () => {
     loadEvents();
   }, []);
 
-  /* ✅ FIXED SUBMIT FUNCTION */
   const submitAttendance = async () => {
     if (!selectedEvent || !user) {
       alert("Please select an event first");
@@ -48,28 +40,27 @@ const Attendance = () => {
 
     setSubmitting(true);
     try {
-      const payload = {
-        userId: user.uid,                 // ✅ REQUIRED by backend
-        eventId: selectedEvent.id,        // ✅ REQUIRED by backend
-
-        // Optional fields (safe to keep)
+      await api.post("/attendance", {
+        userId: user.uid,              // ✅ required
         studentName: user.email,
+        eventId: selectedEvent.id,
         eventTitle: selectedEvent.title,
         date: selectedEvent.eventDate,
         status,
         approvalStatus: "PENDING_ADMIN",
-      };
-
-      console.log("Submitting attendance:", payload); // debug
-
-      await api.post("/attendance", payload);
+      });
 
       alert("✅ Attendance submitted successfully!");
       setSelectedEvent(null);
       setStatus("Present");
-    } catch (error) {
-      console.error("Failed to submit attendance:", error);
-      alert("Failed to submit attendance");
+
+    } catch (error: any) {
+      if (error?.response?.status === 409) {
+        alert("⚠️ Attendance already marked for this event");
+      } else {
+        console.error("Failed to submit attendance:", error);
+        alert("Failed to submit attendance");
+      }
     } finally {
       setSubmitting(false);
     }
@@ -85,21 +76,20 @@ const Attendance = () => {
       label: "Available Events",
       value: events.length,
       icon: Calendar,
-      color: "from-blue-500 to-indigo-500",
+      color: "from-blue-500 to-indigo-500"
     },
     {
       label: "This Week",
-      value: events.filter((e) => {
+      value: events.filter(e => {
         const eventDate = new Date(e.eventDate);
         const today = new Date();
         const daysDiff = Math.ceil(
-          (eventDate.getTime() - today.getTime()) /
-            (1000 * 3600 * 24)
+          (eventDate.getTime() - today.getTime()) / (1000 * 3600 * 24)
         );
         return daysDiff <= 7 && daysDiff >= 0;
       }).length,
       icon: Clock,
-      color: "from-green-500 to-emerald-500",
+      color: "from-green-500 to-emerald-500"
     },
   ];
 
@@ -127,7 +117,7 @@ const Attendance = () => {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -148,54 +138,74 @@ const Attendance = () => {
           ))}
         </div>
 
+        {/* Loading State */}
         {loading && (
-          <div className="bg-white rounded-2xl p-12 text-center">
+          <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
-            <p className="text-gray-600 font-medium">
-              Loading events...
-            </p>
+            <p className="text-gray-600 font-medium">Loading events...</p>
           </div>
         )}
 
+        {/* Empty State */}
         {!loading && events.length === 0 && (
-          <div className="bg-white rounded-2xl p-12 text-center">
-            <AlertCircle className="w-8 h-8 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-gray-900">
+          <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <AlertCircle className="w-8 h-8 text-gray-400" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
               No Events Available
             </h3>
+            <p className="text-gray-600">
+              There are no approved events at the moment
+            </p>
           </div>
         )}
 
         {!loading && events.length > 0 && (
           <>
-            <select
-              onChange={(e) => handleEventSelect(e.target.value)}
-              value={selectedEvent?.id || ""}
-              className="w-full px-4 py-3 border rounded-lg"
-            >
-              <option value="">-- Choose an Event --</option>
-              {events.map((e) => (
-                <option key={e.id} value={e.id}>
-                  {e.title} - {e.eventDate}
-                </option>
-              ))}
-            </select>
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+              <div className="p-6 border-b border-gray-100">
+                <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-blue-600" />
+                  Select Event
+                </h2>
+                <p className="text-sm text-gray-500 mt-1">
+                  Choose an event to mark your attendance
+                </p>
+              </div>
+              <div className="p-6">
+                <select
+                  onChange={(e) => handleEventSelect(e.target.value)}
+                  value={selectedEvent?.id || ""}
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                >
+                  <option value="">-- Choose an Event --</option>
+                  {events.map((e) => (
+                    <option key={e.id} value={e.id}>
+                      {e.title} - {e.eventDate}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
 
             {selectedEvent && (
               <button
                 onClick={submitAttendance}
                 disabled={submitting}
-                className="w-full flex items-center justify-center bg-blue-600 text-white py-4 rounded-lg"
+                className={`w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium py-4 px-6 rounded-lg transition-all shadow-sm hover:shadow-md ${
+                  submitting ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
                 {submitting ? (
                   <>
-                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                    Submitting...
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>Submitting...</span>
                   </>
                 ) : (
                   <>
-                    <Send className="w-5 h-5 mr-2" />
-                    Submit Attendance
+                    <Send className="w-5 h-5" />
+                    <span>Submit Attendance</span>
                   </>
                 )}
               </button>
