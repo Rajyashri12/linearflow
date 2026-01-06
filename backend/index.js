@@ -4,7 +4,7 @@ import cors from "cors";
 
 const app = express();
 
-/* ✅ CORS: allow Netlify + localhost */
+/* ✅ CORS */
 app.use(
   cors({
     origin: true,
@@ -14,33 +14,29 @@ app.use(
 
 app.use(express.json());
 
-/* ✅ Load mock database */
+/* ✅ Load DB */
 const DB_PATH = "db.json";
 let db = JSON.parse(fs.readFileSync(DB_PATH, "utf-8"));
 
-/* ✅ Dynamic GET routes (users, events, etc.) */
+/* ✅ Dynamic GET routes */
 Object.keys(db).forEach((key) => {
   app.get(`/${key}`, (req, res) => {
     res.json(db[key]);
   });
 });
 
-/* ✅ POST: Mark Attendance */
+/* ✅ POST: Submit Attendance */
 app.post("/attendance", (req, res) => {
   const attendance = req.body;
 
   if (!attendance || !attendance.userId || !attendance.eventId) {
-    return res.status(400).json({
-      message: "Invalid attendance data",
-    });
+    return res.status(400).json({ message: "Invalid attendance data" });
   }
 
-  /* ensure attendance array exists */
   if (!db.attendance) {
     db.attendance = [];
   }
 
-  /* prevent duplicate attendance */
   const alreadyMarked = db.attendance.find(
     (a) =>
       a.userId === attendance.userId &&
@@ -55,17 +51,41 @@ app.post("/attendance", (req, res) => {
 
   const newAttendance = {
     ...attendance,
+    approvalStatus: "PENDING_ADMIN",
     timestamp: new Date().toISOString(),
   };
 
   db.attendance.push(newAttendance);
-
-  /* persist to db.json (mock storage) */
   fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 
   res.status(201).json({
     message: "Attendance submitted successfully",
     attendance: newAttendance,
+  });
+});
+
+/* ✅ PATCH: Admin Approve Attendance (FIX) */
+app.patch("/attendance/approve", (req, res) => {
+  const { userId, eventId } = req.body;
+
+  if (!userId || !eventId) {
+    return res.status(400).json({ message: "Missing identifiers" });
+  }
+
+  const record = db.attendance.find(
+    (a) => a.userId === userId && a.eventId === eventId
+  );
+
+  if (!record) {
+    return res.status(404).json({ message: "Attendance not found" });
+  }
+
+  record.approvalStatus = "APPROVED_ADMIN";
+  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+
+  res.json({
+    message: "Attendance approved successfully",
+    attendance: record,
   });
 });
 
