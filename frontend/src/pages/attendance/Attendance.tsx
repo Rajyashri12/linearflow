@@ -41,7 +41,7 @@ const Attendance = () => {
     setSubmitting(true);
     try {
       await api.post("/attendance", {
-        userId: user.uid,              // ✅ required
+        userId: user.uid,              // ✅ backend-required
         studentName: user.email,
         eventId: selectedEvent.id,
         eventTitle: selectedEvent.title,
@@ -55,6 +55,7 @@ const Attendance = () => {
       setStatus("Present");
 
     } catch (error: any) {
+      // ✅ HANDLE DUPLICATE ATTENDANCE CORRECTLY
       if (error?.response?.status === 409) {
         alert("⚠️ Attendance already marked for this event");
       } else {
@@ -115,22 +116,13 @@ const Attendance = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-            >
+            <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-500 text-sm font-medium">
-                    {stat.label}
-                  </p>
-                  <p className="text-3xl font-bold text-gray-900 mt-2">
-                    {stat.value}
-                  </p>
+                  <p className="text-gray-500 text-sm font-medium">{stat.label}</p>
+                  <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
                 </div>
-                <div
-                  className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center`}
-                >
+                <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center`}>
                   <stat.icon className="w-7 h-7 text-white" />
                 </div>
               </div>
@@ -138,7 +130,7 @@ const Attendance = () => {
           ))}
         </div>
 
-        {/* Loading State */}
+        {/* Loading */}
         {loading && (
           <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
@@ -146,21 +138,17 @@ const Attendance = () => {
           </div>
         )}
 
-        {/* Empty State */}
+        {/* Empty */}
         {!loading && events.length === 0 && (
           <div className="bg-white rounded-2xl p-12 shadow-sm border border-gray-100 text-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-              <AlertCircle className="w-8 h-8 text-gray-400" />
-            </div>
+            <AlertCircle className="w-8 h-8 text-gray-400 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               No Events Available
             </h3>
-            <p className="text-gray-600">
-              There are no approved events at the moment
-            </p>
           </div>
         )}
 
+        {/* Event Selection */}
         {!loading && events.length > 0 && (
           <>
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -169,15 +157,12 @@ const Attendance = () => {
                   <Calendar className="w-5 h-5 text-blue-600" />
                   Select Event
                 </h2>
-                <p className="text-sm text-gray-500 mt-1">
-                  Choose an event to mark your attendance
-                </p>
               </div>
               <div className="p-6">
                 <select
                   onChange={(e) => handleEventSelect(e.target.value)}
                   value={selectedEvent?.id || ""}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg"
                 >
                   <option value="">-- Choose an Event --</option>
                   {events.map((e) => (
@@ -193,7 +178,7 @@ const Attendance = () => {
               <button
                 onClick={submitAttendance}
                 disabled={submitting}
-                className={`w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium py-4 px-6 rounded-lg transition-all shadow-sm hover:shadow-md ${
+                className={`w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-lg ${
                   submitting ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >
@@ -218,3 +203,4 @@ const Attendance = () => {
 };
 
 export default Attendance;
+
