@@ -40,8 +40,9 @@ const Attendance = () => {
 
     setSubmitting(true);
     try {
+      // LOGIC KEPT EXACTLY AS PER YOUR FIRST SNIPPET
       await api.post("/attendance", {
-        studentUid: user.uid,
+        userId: user.uid,              
         studentName: user.email,
         eventId: selectedEvent.id,
         eventTitle: selectedEvent.title,
@@ -53,8 +54,10 @@ const Attendance = () => {
       alert("✅ Attendance submitted successfully!");
       setSelectedEvent(null);
       setStatus("Present");
+
     } catch (error: any) {
-       if (error?.response?.status === 409) {
+      // LOGIC KEPT EXACTLY AS PER YOUR FIRST SNIPPET
+      if (error?.response?.status === 409) {
         alert("⚠️ Attendance already marked for this event");
       } else {
         console.error("Failed to submit attendance:", error);
@@ -82,11 +85,13 @@ const Attendance = () => {
       value: events.filter(e => {
         const eventDate = new Date(e.eventDate);
         const today = new Date();
-        const daysDiff = Math.ceil((eventDate.getTime() - today.getTime()) / (1000 * 3600 * 24));
+        const daysDiff = Math.ceil(
+          (eventDate.getTime() - today.getTime()) / (1000 * 3600 * 24)
+        );
         return daysDiff <= 7 && daysDiff >= 0;
       }).length,
       icon: Clock,
-      color: "from-emerald-500 to-teal-500"
+      color: "from-green-500 to-emerald-500"
     },
   ];
 
@@ -94,27 +99,27 @@ const Attendance = () => {
     <DashboardLayout
       title={
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-blue-200 shadow-lg">
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
             <CheckCircle className="w-6 h-6 text-white" />
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Mark Attendance</h1>
-            <p className="text-sm text-gray-500">Log your presence for approved college events</p>
+            <p className="text-sm text-gray-500">Submit your presence for approved events</p>
           </div>
         </div>
       }
     >
-      <div className="max-w-4xl mx-auto space-y-6 pb-12">
+      <div className="max-w-4xl mx-auto space-y-6 pb-10">
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {stats.map((stat, idx) => (
-            <div key={idx} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+            <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-gray-500 text-sm font-medium uppercase tracking-wider">{stat.label}</p>
-                  <p className="text-3xl font-bold text-gray-900 mt-1">{stat.value}</p>
+                  <p className="text-gray-500 text-sm font-medium">{stat.label}</p>
+                  <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
                 </div>
-                <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center shadow-inner`}>
+                <div className={`w-14 h-14 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center`}>
                   <stat.icon className="w-7 h-7 text-white" />
                 </div>
               </div>
@@ -124,134 +129,122 @@ const Attendance = () => {
 
         {/* Loading State */}
         {loading && (
-          <div className="bg-white rounded-3xl p-20 border border-gray-100 text-center shadow-sm">
-            <Loader2 className="w-10 h-10 animate-spin text-blue-600 mx-auto mb-4" />
-            <p className="text-gray-500 font-medium">Fetching scheduled events...</p>
+          <div className="bg-white rounded-2xl p-12 border border-gray-100 text-center shadow-sm">
+            <div className="inline-block animate-spin rounded-full h-10 w-10 border-4 border-blue-600 border-t-transparent mb-4"></div>
+            <p className="text-gray-600 font-medium">Loading events...</p>
           </div>
         )}
 
         {/* Empty State */}
         {!loading && events.length === 0 && (
-          <div className="bg-white rounded-3xl p-16 border border-dashed border-gray-300 text-center">
-            <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
-              <AlertCircle className="w-10 h-10 text-gray-300" />
+          <div className="bg-white rounded-2xl p-12 border border-gray-100 text-center shadow-sm">
+            <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <AlertCircle className="w-8 h-8 text-gray-300" />
             </div>
-            <h3 className="text-xl font-bold text-gray-800">No events found</h3>
-            <p className="text-gray-500 mt-2">Check back later for newly approved activities.</p>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">No Events Available</h3>
+            <p className="text-gray-600">There are no approved events at the moment</p>
           </div>
         )}
 
-        {/* Form Section */}
         {!loading && events.length > 0 && (
           <div className="space-y-6">
+            {/* Event Selection Card */}
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="px-6 py-5 border-b border-gray-50 bg-gray-50/50">
-                <label className="text-sm font-semibold text-gray-700 uppercase tracking-tight">Step 1: Select Event</label>
+              <div className="p-6 border-b border-gray-50 bg-gray-50/30">
+                <h2 className="text-sm font-bold text-gray-700 uppercase tracking-wider flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-blue-600" />
+                  1. Select Event
+                </h2>
               </div>
               <div className="p-6">
                 <select
                   onChange={(e) => handleEventSelect(e.target.value)}
                   value={selectedEvent?.id || ""}
-                  className="w-full px-4 py-4 bg-white border-2 border-gray-100 rounded-xl focus:ring-4 focus:ring-blue-50 focus:border-blue-500 transition-all text-gray-800 font-medium appearance-none"
-                  style={{ backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem center', backgroundSize: '1.2em' }}
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 font-medium"
                 >
-                  <option value="">Choose from available events...</option>
+                  <option value="">-- Select an Event --</option>
                   {events.map((e) => (
                     <option key={e.id} value={e.id}>
-                      {e.title} ({e.eventDate})
+                      {e.title} — {e.eventDate}
                     </option>
                   ))}
                 </select>
               </div>
             </div>
 
+            {/* Attendance Form Card */}
             {selectedEvent && (
-              <div className="bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden transition-all animate-in fade-in slide-in-from-bottom-4">
+              <div className="bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-300">
                 <div className="h-1.5 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-                
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-8">
-                    <div>
-                      <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full uppercase tracking-wider">Event Details</span>
-                      <h2 className="text-2xl font-black text-gray-900 mt-2">{selectedEvent.title}</h2>
-                    </div>
-                    <div className="text-right">
-                       <p className="text-sm font-bold text-gray-900">{selectedEvent.eventDate}</p>
-                       <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Scheduled Date</p>
-                    </div>
-                  </div>
+                <div className="p-6">
+                  <h2 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <User className="w-5 h-5 text-indigo-600" />
+                    2. Event Details & Status
+                  </h2>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-4">
-                        <MapPin className="w-5 h-5 text-blue-500" />
-                      </div>
+                  {/* Event Details Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 bg-blue-50/30 p-5 rounded-2xl border border-blue-50">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-white rounded-lg shadow-sm"><MapPin className="w-4 h-4 text-blue-500" /></div>
                       <div>
-                        <p className="text-xs text-gray-400 font-bold uppercase">Venue</p>
-                        <p className="text-sm font-semibold text-gray-700">{selectedEvent.venue || "Campus Main Hall"}</p>
+                        <p className="text-[10px] uppercase font-bold text-gray-400">Venue</p>
+                        <p className="text-sm font-semibold text-gray-800">{selectedEvent.venue || "TBD"}</p>
                       </div>
                     </div>
-                    <div className="flex items-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-4">
-                        <User className="w-5 h-5 text-indigo-500" />
-                      </div>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-white rounded-lg shadow-sm"><Clock className="w-4 h-4 text-blue-500" /></div>
                       <div>
-                        <p className="text-xs text-gray-400 font-bold uppercase">Department</p>
-                        <p className="text-sm font-semibold text-gray-700">{selectedEvent.department || "General"}</p>
+                        <p className="text-[10px] uppercase font-bold text-gray-400">Date</p>
+                        <p className="text-sm font-semibold text-gray-800">{selectedEvent.eventDate}</p>
                       </div>
                     </div>
                   </div>
 
+                  {/* Status Selection */}
                   <div className="mb-8">
-                    <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-wider">Step 2: Your Status</label>
+                    <label className="block text-sm font-bold text-gray-700 mb-4 uppercase tracking-tight">Mark your status</label>
                     <div className="grid grid-cols-2 gap-4">
-                      <button 
+                      <button
+                        type="button"
                         onClick={() => setStatus("Present")}
-                        className={`flex items-center justify-center gap-3 p-5 rounded-2xl border-2 transition-all ${
-                        status === "Present" 
-                          ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-md ring-4 ring-emerald-50' 
-                          : 'border-gray-100 bg-white text-gray-500 hover:border-gray-200'
-                      }`}>
-                        <CheckCircle className={`w-6 h-6 ${status === "Present" ? 'text-emerald-600' : 'text-gray-300'}`} />
-                        <span className="font-bold text-lg">Present</span>
+                        className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all font-bold ${
+                          status === "Present" 
+                            ? 'border-green-500 bg-green-50 text-green-700 shadow-inner' 
+                            : 'border-gray-100 bg-white text-gray-400 hover:bg-gray-50'
+                        }`}
+                      >
+                        <CheckCircle className="w-5 h-5" /> Present
                       </button>
-
-                      <button 
+                      <button
+                        type="button"
                         onClick={() => setStatus("Absent")}
-                        className={`flex items-center justify-center gap-3 p-5 rounded-2xl border-2 transition-all ${
-                        status === "Absent" 
-                          ? 'border-red-500 bg-red-50 text-red-700 shadow-md ring-4 ring-red-50' 
-                          : 'border-gray-100 bg-white text-gray-500 hover:border-gray-200'
-                      }`}>
-                        <XCircle className={`w-6 h-6 ${status === "Absent" ? 'text-red-600' : 'text-gray-300'}`} />
-                        <span className="font-bold text-lg">Absent</span>
+                        className={`flex items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all font-bold ${
+                          status === "Absent" 
+                            ? 'border-red-500 bg-red-50 text-red-700 shadow-inner' 
+                            : 'border-gray-100 bg-white text-gray-400 hover:bg-gray-50'
+                        }`}
+                      >
+                        <XCircle className="w-5 h-5" /> Absent
                       </button>
                     </div>
                   </div>
 
+                  {/* Action Button */}
                   <button
                     onClick={submitAttendance}
                     disabled={submitting}
-                    className={`w-full group relative flex items-center justify-center gap-3 bg-gray-900 text-white font-bold py-5 px-8 rounded-2xl overflow-hidden transition-all hover:bg-black active:scale-[0.98] ${
-                      submitting ? 'opacity-70 cursor-not-allowed' : ''
+                    className={`w-full flex items-center justify-center gap-3 py-4 rounded-xl font-bold text-white transition-all shadow-lg active:scale-[0.98] ${
+                      submitting 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-blue-200'
                     }`}
                   >
                     {submitting ? (
-                      <Loader2 className="w-6 h-6 animate-spin" />
+                      <><Loader2 className="w-5 h-5 animate-spin" /> Submitting...</>
                     ) : (
-                      <>
-                        <Send className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                        <span className="text-lg">Confirm Attendance</span>
-                      </>
+                      <><Send className="w-5 h-5" /> Submit Attendance</>
                     )}
                   </button>
-
-                  <div className="mt-6 flex items-start gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
-                    <AlertCircle className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                    <p className="text-xs text-blue-600 leading-relaxed">
-                      <strong>Submission Note:</strong> By clicking confirm, your attendance record for <strong>{selectedEvent.title}</strong> will be timestamped and sent to the administrator for verification.
-                    </p>
-                  </div>
                 </div>
               </div>
             )}
