@@ -51,18 +51,33 @@ const AdminDashboard = () => {
   }, []);
 
   // --- 2. User Approval Actions ---
-  const handleUserApproval = async (userId: string, approve: boolean) => {
-    try {
-      await api.patch(`/users/${userId}`, {
-        status: approve ? "APPROVED" : "REJECTED",
-        approvedAt: new Date().toISOString(),
-      });
-      alert(approve ? "User access granted." : "User registration rejected.");
-      loadDashboardData();
-    } catch (error) {
-      console.error("User update failed", error);
-    }
-  };
+ const handleAttendance = async (
+  record: any,
+  status: "APPROVED_BY_ADMIN" | "REJECTED_BY_ADMIN"
+) => {
+  try {
+    await api.patch("/attendance/approve", {
+      userId: record.userId,
+      eventId: record.eventId,
+    });
+
+    // Notification logic (unchanged)
+    const toRole = status === "APPROVED_BY_ADMIN" ? "hod" : "student";
+    await api.post("/notifications", {
+      toRole: toRole,
+      message: `Attendance ${
+        status === "APPROVED_BY_ADMIN" ? "approved" : "rejected"
+      } for ${record.studentName}`,
+      read: false,
+    });
+
+    loadDashboardData();
+  } catch (error) {
+    console.error("Attendance action failed", error);
+    alert("Failed to update attendance status");
+  }
+};
+
 
   // --- 3. Attendance Approval Actions ---
   const handleAttendance = async (record: any, status: "APPROVED_BY_ADMIN" | "REJECTED_BY_ADMIN") => {
