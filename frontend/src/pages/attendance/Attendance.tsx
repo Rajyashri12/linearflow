@@ -60,7 +60,7 @@ const Attendance = () => {
         alert("⚠️ You have already marked attendance for this event.");
       } else {
         console.error("Failed to submit attendance:", error);
-        alert("Failed to submit attendance. Please try again.");
+        alert("Already Submitted.");
       }
     } finally {
       setSubmitting(false);
