@@ -140,7 +140,6 @@ LinearFlow helps institutions achieve:
 
 **Result:** Efficient, transparent, and automated campus operations.
 
----
 
 # 🚀 Future Enhancements
 
