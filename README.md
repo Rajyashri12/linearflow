@@ -11,7 +11,6 @@ LinearFlow is a **secure, automated campus workflow platform** designed to elimi
 
 It acts as a **digital gatekeeper for institutions** by ensuring **verified access, clash-free event scheduling, real-time attendance tracking, and automated reporting — all in one centralized platform.**
 
----
 
 # 🎯 Problem
 
@@ -27,7 +26,6 @@ This leads to:
 
 These inefficiencies create **security risks, confusion, and unnecessary workload** for faculty and administrators.
 
----
 
 # 💡 Solution — LinearFlow
 
@@ -53,7 +51,6 @@ Teachers can monitor and verify event attendance digitally in real time.
 📄 **One-Click Reporting**
 Instantly generate clean, downloadable institutional reports.
 
----
 
 # 🧠 Key Features
 
@@ -65,7 +62,6 @@ Instantly generate clean, downloadable institutional reports.
 ✔ One-Click Professional Reporting
 ✔ Centralized Data Management
 
----
 
 # 🏗 System Architecture
 
@@ -104,7 +100,6 @@ Approvals
 
 This architecture ensures **scalability, modularity, and secure data handling.**
 
----
 
 # 🔄 Workflow Overview
 
@@ -132,7 +127,6 @@ This architecture ensures **scalability, modularity, and secure data handling.**
 
 * System generates downloadable reports
 
----
 
 # 📊 Impact
 
@@ -160,7 +154,6 @@ Planned upgrades include:
 🔗 ERP / LMS integration
 ☁ Cloud-based multi-campus support
 
----
 
 # 🛠 Tech Stack
 
@@ -185,36 +178,10 @@ PlantUML
 Draw.io
 GitHub
 
----
-
 # 👨‍💻 Authors
 
 **Rajyashri Dulneeya Pradeep Yadav**
----
 
 # 🌟 Vision
 
 LinearFlow aims to evolve into a **complete digital governance platform for educational institutions**, bringing **security, automation, and transparency** to campus operations.
-
----
-
-# 📜 License
-
-MIT License
-
-Copyright (c) 2026 Omni-Enhanced Developers
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software.
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY.
